@@ -1,0 +1,12 @@
+extends layout
+block content
+	h1 #{package.title}
+	p Description: #{package.description}
+	p OwnerName: #{ownerName}
+	hr
+
+	if user
+		if user.id == package.user_id
+			a.btn.btn-outline-info.rounded-0(href='/packages/edit/'+package._id) Edit package
+
+			a.btn.btn-outline-danger.js-delete_package.rounded-0.ml-2(href='#'+package._id, data-pid=package._id) Delete package

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h2 Edit package
+
+	form(method='POST', action='/packages/update/'+package._id)
+		#form-group
+			label Package Name:
+			input.form-control.mt-2(name='title', type='text', value=package.title)
+		#form-group
+			label Description
+			textarea.form-control.mt-2(name='description', type='text') #{package.description}
+		input.btn.btn-primary.mt-2(type='submit', value='Update package')

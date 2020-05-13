@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h2 Add package
+
+	form(method='POST', action='/packages/save')
+		#form-group
+			label Package Name:
+			input.form-control.mt-2(name='title', type='text')
+		#form-group
+			label Description
+			textarea.form-control.mt-2(name='description', type='text')
+		input.btn.btn-primary.mt-2(type='submit', value='Save package')
